@@ -7,7 +7,7 @@ import (
 )
 
 var versionCmd = &cobra.Command{
-	Use: "version",
+	Use:   "version",
 	Short: "version subcommand show git version info.",
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -15,11 +15,11 @@ var versionCmd = &cobra.Command{
 		if err != nil {
 			Error(cmd, args, err)
 		}
-
+		fmt.Println("Hello")
 		fmt.Fprint(os.Stdout, output)
 	},
 }
 
-func init()  {
+func init() {
 	rootCmd.AddCommand(versionCmd)
 }
